@@ -1,0 +1,27 @@
+CUBAO ACOUNT — BUILD VÀ CHẠY TRÊN MAC
+
+Phải build ngay trên máy Mac (không build được bản Mac từ Windows).
+
+1. Cài công cụ (một lần), mở Terminal:
+     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+     brew install python@3.11 node
+
+2. Chép cả thư mục Cubao-Acount-mac sang Mac, rồi trong Terminal:
+     cd đường-dẫn/Cubao-Acount-mac
+     bash build-mac.sh
+   Lần đầu mất khoảng 5–15 phút (tải Chromium, Electron).
+
+3. Kết quả nằm trong dist-mac/: file .dmg và Cubao Acount.app.
+   Kéo Cubao Acount.app vào Applications. Lần đầu mở: chuột phải > Open.
+   Nếu báo "bị hỏng": xattr -cr "/Applications/Cubao Acount.app"
+
+4. Dữ liệu (tài khoản, log, exports) trên Mac nằm ở:
+     ~/Library/Application Support/Cubao Acount/data
+   Muốn mang dữ liệu từ máy Windows sang: tắt app, chép nội dung thư mục data
+   của bản Windows (pool.sqlite, cookies, exports, registered_accounts.tsv,
+   resources.json ...) vào thư mục trên rồi mở lại app.
+
+Khác bản Windows:
+- Nút X ẩn app, app vẫn chạy ở thanh menu trên cùng (biểu tượng khay). Thoát hẳn: Ứng dụng > Thoát và dừng tác vụ.
+- Khoá dùng chung Kiot giữa 2 app (Cubao + Voice) chỉ có trên Windows; trên Mac đừng chạy 2 app cùng một key Kiot cùng lúc.
+- Khi đang đăng ký, máy được giữ không ngủ bằng caffeinate.

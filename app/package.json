@@ -1,0 +1,29 @@
+{
+  "name": "cubao-acount",
+  "version": "1.0.0",
+  "main": "main.js",
+  "private": true,
+  "productName": "Cubao Acount",
+  "devDependencies": {
+    "electron": "45.0.0",
+    "electron-builder": "26.0.12"
+  },
+  "build": {
+    "appId": "local.cubao.acount",
+    "productName": "Cubao Acount",
+    "directories": { "output": "../dist-mac" },
+    "files": ["main.js", "app-config.json", "icon.png", "ui/**/*"],
+    "extraResources": [
+      { "from": "../build/dist/NoteGPTBackend", "to": "backend" },
+      { "from": "../build/browsers", "to": "browsers" },
+      { "from": "../build/tools", "to": "tools" }
+    ],
+    "asar": false,
+    "mac": {
+      "icon": "../build/icon.png",
+      "target": ["dmg"],
+      "category": "public.app-category.utilities",
+      "identity": null
+    }
+  }
+}
